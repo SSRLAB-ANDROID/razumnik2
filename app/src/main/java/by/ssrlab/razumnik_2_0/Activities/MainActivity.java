@@ -15,6 +15,7 @@ import by.ssrlab.razumnik_2_0.Tools.Waiter;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final int DOOR_TIME_SEC = 1;
     private final int PAGE_NUMS = 3;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
@@ -53,10 +54,16 @@ public class MainActivity extends AppCompatActivity {
             fragment.setListener(new ScreenSliderFragment.OnClickListener() {
                 @Override
                 public void onClick() {
-                    HouseMain houseMain = fragment.getHouseMain();
+                    final HouseMain houseMain = fragment.getHouseMain();
                     if (houseMain.isAvailability()) {
                         fragment.setImageViewImage(houseMain.getStateImage(true));
-                        startActivity(new Intent(getApplicationContext(), houseMain.getMClass()));
+                        new Waiter(new Waiter.OnWaitCompleteListener() {
+                            @Override
+                            public void OnWaitComplete() {
+                                startActivity(new Intent(getApplicationContext(), houseMain.getMClass()));
+                            }
+                        }).execute(DOOR_TIME_SEC);
+
                     }
                 }
             });

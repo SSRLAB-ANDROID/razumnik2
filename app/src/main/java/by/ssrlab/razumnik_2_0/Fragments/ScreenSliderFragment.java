@@ -38,6 +38,7 @@ public class ScreenSliderFragment extends Fragment {
     }
 
     private ImageView imageView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,5 +63,13 @@ public class ScreenSliderFragment extends Fragment {
 
     public void setImageViewImage(int resId){
         imageView.setImageResource(resId);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(imageView!=null){
+            setImageViewImage(mHouseMain.getStateImage(false));
+        }
     }
 }
