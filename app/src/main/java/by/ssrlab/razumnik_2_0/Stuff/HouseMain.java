@@ -40,8 +40,7 @@ public class HouseMain {
             resIdPath.append(NOT_AVAILABLE);
         }
 
-        int resId = mContext.getResources().getIdentifier(resIdPath.toString(), "drawable", mContext.getPackageName());
-        return resId;
+        return mContext.getResources().getIdentifier(resIdPath.toString(), "drawable", mContext.getPackageName());
     }
 
 

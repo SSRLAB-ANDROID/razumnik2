@@ -1,6 +1,6 @@
 package by.ssrlab.razumnik_2_0.Fragments;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -71,5 +71,9 @@ public class ScreenSliderFragment extends Fragment {
         if(imageView!=null){
             setImageViewImage(mHouseMain.getStateImage(false));
         }
+    }
+
+    public void setClickable(boolean clickable){
+        imageView.setClickable(clickable);
     }
 }

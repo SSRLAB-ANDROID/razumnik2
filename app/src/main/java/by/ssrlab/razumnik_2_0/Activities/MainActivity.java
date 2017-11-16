@@ -17,15 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     private final int DOOR_TIME_SEC = 1;
     private final int PAGE_NUMS = 3;
-    private ViewPager mPager;
-    private PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPager = (ViewPager) findViewById(R.id.main_viewPager);
+        ViewPager mPager = (ViewPager) findViewById(R.id.main_viewPager);
         HouseMain[] houseMains = new HouseMain[]{
                 new HouseMain(getApplicationContext(), HouseMain.TYPE_ONE, true, FirstHouseActivity.class),
                 new HouseMain(getApplicationContext(), HouseMain.TYPE_TWO, false, null),
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ScreenSliderFragment[] fragments = toHouseAttach(houseMains);
         setFragmentsListeners(fragments);
 
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), fragments);
+        PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
     }
 
@@ -49,17 +47,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setFragmentsListeners(ScreenSliderFragment[] fragments) {
-        for (int i = 0; i < fragments.length; i++) {
-            final ScreenSliderFragment fragment = fragments[i];
+        for (final ScreenSliderFragment fragment : fragments
+                ) {
             fragment.setListener(new ScreenSliderFragment.OnClickListener() {
                 @Override
                 public void onClick() {
                     final HouseMain houseMain = fragment.getHouseMain();
                     if (houseMain.isAvailability()) {
+                        fragment.setClickable(false);
                         fragment.setImageViewImage(houseMain.getStateImage(true));
                         new Waiter(new Waiter.OnWaitCompleteListener() {
                             @Override
                             public void OnWaitComplete() {
+                                fragment.setClickable(true);
                                 startActivity(new Intent(getApplicationContext(), houseMain.getMClass()));
                             }
                         }).execute(DOOR_TIME_SEC);

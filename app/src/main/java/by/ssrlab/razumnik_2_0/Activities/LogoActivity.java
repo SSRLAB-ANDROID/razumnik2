@@ -10,7 +10,7 @@ import by.ssrlab.razumnik_2_0.Tools.Waiter;
 
 public class LogoActivity extends AppCompatActivity {
 
-    private final int LOGO_TIME_SEC = 3;
+    private final int LOGO_TIME_SEC = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
