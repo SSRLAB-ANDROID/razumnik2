@@ -9,18 +9,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import by.ssrlab.razumnik_2_0.R;
-import by.ssrlab.razumnik_2_0.Stuff.HouseMain;
+import by.ssrlab.razumnik_2_0.Stuff.DoorMain;
 
 
 public class ScreenSliderFragment extends Fragment {
-    private HouseMain mHouseMain;
+    private DoorMain mDoorMain;
 
-    public void setHouseMain(HouseMain houseMain) {
-        mHouseMain = houseMain;
+    public void setDoorMain(DoorMain doorMain) {
+        mDoorMain = doorMain;
     }
 
-    public HouseMain getHouseMain() {
-        return mHouseMain;
+    public DoorMain getDoorMain() {
+        return mDoorMain;
     }
 
     private OnClickListener mListener;
@@ -51,7 +51,7 @@ public class ScreenSliderFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_screen_slider, container, false);
         imageView = (ImageView) view.findViewById(R.id.house_imageView);
-        setImageViewImage(mHouseMain.getStateImage(false));
+        setImageViewImage(mDoorMain.getStateImage(false));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,7 @@ public class ScreenSliderFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if(imageView!=null){
-            setImageViewImage(mHouseMain.getStateImage(false));
+            setImageViewImage(mDoorMain.getStateImage(false));
         }
     }
 

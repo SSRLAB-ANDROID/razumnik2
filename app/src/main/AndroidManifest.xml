@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".Activities.FirstHouseActivity">
         </activity>
+        <activity android:name=".Activities.DoorsActivity">
+        </activity>
     </application>
 
 </manifest>

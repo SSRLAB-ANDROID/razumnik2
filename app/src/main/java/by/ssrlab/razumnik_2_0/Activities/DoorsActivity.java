@@ -12,7 +12,7 @@ import by.ssrlab.razumnik_2_0.R;
 import by.ssrlab.razumnik_2_0.Stuff.DoorMain;
 import by.ssrlab.razumnik_2_0.Tools.Waiter;
 
-public class MainActivity extends AppCompatActivity {
+public class DoorsActivity extends AppCompatActivity {
 
     private final int DOOR_TIME_SEC = 1;
     private int PAGE_NUMS;
@@ -20,13 +20,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_doors);
 
         ViewPager mPager = (ViewPager) findViewById(R.id.main_viewPager);
         DoorMain[] doorMains = new DoorMain[]{
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_ONE, true, FirstHouseActivity.class),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_TWO, false, null),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_THREE, false, null)
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, FirstHouseActivity.class),
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, false, null)
         };
         PAGE_NUMS = doorMains.length;
         ScreenSliderFragment[] fragments = toHouseAttach(doorMains);

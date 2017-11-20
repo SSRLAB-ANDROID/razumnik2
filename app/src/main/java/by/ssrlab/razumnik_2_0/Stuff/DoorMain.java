@@ -6,7 +6,9 @@ import android.content.Context;
  * Created by Mihal on 20.10.2017.
  */
 
-public class HouseMain {
+public class DoorMain {
+    public static final String TYPE_HOUSE = "house";
+    public static final String TYPE_DOOR = "door";
     public static final String TYPE_ONE = "first";
     public static final String TYPE_TWO = "second";
     public static final String TYPE_THREE = "third";
@@ -16,12 +18,14 @@ public class HouseMain {
 
     private boolean availability;
     private String type;
+    private String type_c;
     private Context mContext;
     private Class mClass;
 
-    public HouseMain(Context context, String type, boolean availability, Class aClass){
+    public DoorMain(Context context, String type, String type_c, boolean availability, Class aClass){
         mContext = context;
         this.type = type;
+        this.type_c = type_c;
         this.availability = availability;
         mClass = aClass;
     }
@@ -29,6 +33,8 @@ public class HouseMain {
     public int getStateImage(boolean trigger){
         StringBuilder resIdPath = new StringBuilder();
         resIdPath.append(type);
+        resIdPath.append("_");
+        resIdPath.append(type_c);
         resIdPath.append("_");
         if(this.availability){
             if(trigger) {
