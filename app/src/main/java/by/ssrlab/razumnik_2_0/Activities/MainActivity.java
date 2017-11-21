@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager mPager = (ViewPager) findViewById(R.id.main_viewPager);
         DoorMain[] doorMains = new DoorMain[]{
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_ONE, true, FirstHouseActivity.class),
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_ONE, true, DoorsActivity.class),
                 new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_TWO, false, null),
                 new DoorMain(getApplicationContext(), DoorMain.TYPE_HOUSE, DoorMain.TYPE_THREE, false, null)
         };

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Razumnik_2_0</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="letters">А,Б,В,Г,Д,Е,Ё,Ж,З,І,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ў,Ф,Х,Ц,Ч,Ш,Ы,Ь,Э,Ю,Я</string>
+    <string name="letters_audio">a,b,w,g,d,je,yo,zh,z,i,i_karotkae,k,l,m,n,o,p,r,s,t,u,u_neskladovaje,f,x,ts,cz,sh,y,miakki_znak,e,ju,ja</string>
 </resources>

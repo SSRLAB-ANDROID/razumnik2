@@ -26,13 +26,14 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
     }
 
     public interface OnItemClickListener {
-        void OnItemClick();
+        void OnItemClick(int i);
     }
 
     public MyRecycleViewAdapter(T[] objects, int viewId) {
         this.viewId = viewId;
         mObjects = objects;
     }
+
 
 
 
@@ -65,11 +66,11 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.OnItemClick();
+                mListener.OnItemClick(position);
             }
         });
         if (mObjects[position] instanceof String) {
