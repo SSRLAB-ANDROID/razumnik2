@@ -1,6 +1,7 @@
 package by.ssrlab.razumnik_2_0.Adapters;
 
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import by.ssrlab.razumnik_2_0.R;
 
@@ -21,6 +24,7 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
     private T[] mObjects;
 
     private OnItemClickListener mListener;
+
     public void setListener(OnItemClickListener listener) {
         mListener = listener;
     }
@@ -33,8 +37,6 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
         this.viewId = viewId;
         mObjects = objects;
     }
-
-
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,16 +75,28 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
                 mListener.OnItemClick(position);
             }
         });
-        if (mObjects[position] instanceof String) {
+        if (mObjects[0] instanceof String[]) {
+            String[] text = (String[]) mObjects[0];
+            String[] text_back = (String[]) mObjects[1];
+            String[] text_color = (String[]) mObjects[2];
+            holder.mTextView.setText(text[position]);
+            holder.mView.setBackgroundColor(Color.parseColor(text_back[position]));
+            holder.mTextView.setTextColor(Color.parseColor(text_color[position]));
+        } else if (mObjects[position] instanceof String) {
             holder.mTextView.setText((String) mObjects[position]);
+        } else if (mObjects[position] instanceof Integer) {
+            holder.mImageView.setBackgroundResource((Integer) mObjects[position]);
         }
-        if (mObjects[position] instanceof Integer) {
-            holder.mImageView.setBackgroundResource((Integer)mObjects[position]);
-        }
+
     }
 
     @Override
     public int getItemCount() {
-        return mObjects.length;
+        if (mObjects[0] instanceof String[]) {
+            String[] ar = (String[]) mObjects[0];
+            return ar.length;
+        } else {
+            return mObjects.length;
+        }
     }
 }

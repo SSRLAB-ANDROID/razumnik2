@@ -16,23 +16,28 @@ public class DoorsActivity extends AppCompatActivity {
 
     private final int DOOR_TIME_SEC = 1;
     private int PAGE_NUMS;
+    private DoorMain[] doorMains;
+    private int topic;
+
+    public static final int LETTERS_TOPIC = 0;
+    public static final int NUMBERS_TOPIC = 1;
+    public static final int COLORS_TOPIC = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doors);
-
+        topic = getSharedPreferences("sp", MODE_PRIVATE).getInt("topic", 0);
         ViewPager mPager = (ViewPager) findViewById(R.id.main_viewPager);
-        DoorMain[] doorMains = new DoorMain[]{
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, FirstHouseActivity.class),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, false, null)
-        };
+
+        setDoorsRoom();
         PAGE_NUMS = doorMains.length;
         ScreenSliderFragment[] fragments = toHouseAttach(doorMains);
         setFragmentsListeners(fragments);
 
         PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), fragments);
         mPager.setAdapter(mPagerAdapter);
+
     }
 
 
@@ -43,6 +48,29 @@ public class DoorsActivity extends AppCompatActivity {
             fragments[i].setDoorMain(doorMains[i]);
         }
         return fragments;
+    }
+
+    private void setDoorsRoom(){
+        Class theoryClass = null;
+        Class gameClass= null;
+        if(topic == LETTERS_TOPIC){
+            theoryClass = LettersTheoryActivity.class;
+            gameClass = null;
+        }
+        if(topic == NUMBERS_TOPIC){
+            theoryClass = NumbersTheoryActivity.class;
+            gameClass = null;
+        }
+        if(topic == COLORS_TOPIC){
+            theoryClass = ColorsTheoryActivity.class;
+            gameClass = null;
+        }
+
+
+        doorMains = new DoorMain[]{
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "Вучы"),
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, false, gameClass, "Іграй")
+        };
     }
 
     private void setFragmentsListeners(ScreenSliderFragment[] fragments) {

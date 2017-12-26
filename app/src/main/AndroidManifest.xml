@@ -20,9 +20,15 @@
         </activity>
         <activity android:name=".Activities.MainActivity">
         </activity>
-        <activity android:name=".Activities.FirstHouseActivity">
+        <activity android:name=".Activities.LettersTheoryActivity">
         </activity>
         <activity android:name=".Activities.DoorsActivity">
+        </activity>
+        <activity android:name=".Activities.TopicsActivity">
+        </activity>
+        <activity android:name=".Activities.NumbersTheoryActivity">
+        </activity>
+        <activity android:name=".Activities.ColorsTheoryActivity">
         </activity>
     </application>
 

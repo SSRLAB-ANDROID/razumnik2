@@ -13,4 +13,13 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         app:srcCompat="@android:color/holo_green_light"/>
+
+    <TextView
+        android:id="@+id/slider_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"/>
 </FrameLayout>

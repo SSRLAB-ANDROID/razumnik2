@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import by.ssrlab.razumnik_2_0.R;
 import by.ssrlab.razumnik_2_0.Stuff.DoorMain;
@@ -29,7 +30,7 @@ public class ScreenSliderFragment extends Fragment {
         void onClick();
     }
 
-    public void setListener(OnClickListener listener){
+    public void setListener(OnClickListener listener) {
         mListener = listener;
     }
 
@@ -58,22 +59,26 @@ public class ScreenSliderFragment extends Fragment {
                 mListener.onClick();
             }
         });
+        if (mDoorMain.getTitle() != null) {
+            TextView tv = (TextView) view.findViewById(R.id.slider_title);
+            tv.setText(mDoorMain.getTitle());
+        }
         return view;
     }
 
-    public void setImageViewImage(int resId){
+    public void setImageViewImage(int resId) {
         imageView.setImageResource(resId);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if(imageView!=null){
+        if (imageView != null) {
             setImageViewImage(mDoorMain.getStateImage(false));
         }
     }
 
-    public void setClickable(boolean clickable){
+    public void setClickable(boolean clickable) {
         imageView.setClickable(clickable);
     }
 }

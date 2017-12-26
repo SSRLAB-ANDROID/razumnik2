@@ -21,8 +21,9 @@ public class DoorMain {
     private String type_c;
     private Context mContext;
     private Class mClass;
+    private String title = null;
 
-    public DoorMain(Context context, String type, String type_c, boolean availability, Class aClass){
+    public DoorMain(Context context, String type, String type_c, boolean availability, Class aClass) {
         mContext = context;
         this.type = type;
         this.type_c = type_c;
@@ -30,19 +31,28 @@ public class DoorMain {
         mClass = aClass;
     }
 
-    public int getStateImage(boolean trigger){
+    public DoorMain(Context context, String type, String type_c, boolean availability, Class aClass, String title) {
+        mContext = context;
+        this.type = type;
+        this.type_c = type_c;
+        this.availability = availability;
+        mClass = aClass;
+        this.title = title;
+    }
+
+    public int getStateImage(boolean trigger) {
         StringBuilder resIdPath = new StringBuilder();
         resIdPath.append(type);
         resIdPath.append("_");
         resIdPath.append(type_c);
         resIdPath.append("_");
-        if(this.availability){
-            if(trigger) {
+        if (this.availability) {
+            if (trigger) {
                 resIdPath.append(OPEN);
-            }else {
+            } else {
                 resIdPath.append(CLOSE);
             }
-        }else {
+        } else {
             resIdPath.append(NOT_AVAILABLE);
         }
 
@@ -60,5 +70,9 @@ public class DoorMain {
 
     public Class getMClass() {
         return mClass;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

@@ -14,6 +14,7 @@ public class MyMediaPlayer {
 
     public MyMediaPlayer(Context context) {
         mContext = context;
+
     }
 
     public void play(String path) {
@@ -21,6 +22,12 @@ public class MyMediaPlayer {
         try {
             AssetFileDescriptor afd = mContext.getAssets().openFd(path);
             mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    mp.release();
+                }
+            });
             mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mMediaPlayer.prepare();
             mMediaPlayer.start();
