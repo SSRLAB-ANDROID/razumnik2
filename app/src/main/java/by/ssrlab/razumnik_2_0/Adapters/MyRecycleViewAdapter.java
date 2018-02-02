@@ -3,6 +3,7 @@ package by.ssrlab.razumnik_2_0.Adapters;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,6 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(viewId, parent, false);
         // set the view's size, margins, paddings and layout parameters
-
         ViewHolder vh = new ViewHolder(v);
         return vh;
 
@@ -79,7 +79,7 @@ public class MyRecycleViewAdapter<T> extends RecyclerView.Adapter<MyRecycleViewA
             String[] text = (String[]) mObjects[0];
             String[] text_back = (String[]) mObjects[1];
             String[] text_color = (String[]) mObjects[2];
-            holder.mTextView.setText(text[position]);
+             holder.mTextView.setText(text[position]);
             holder.mView.setBackgroundColor(Color.parseColor(text_back[position]));
             holder.mTextView.setTextColor(Color.parseColor(text_color[position]));
         } else if (mObjects[position] instanceof String) {

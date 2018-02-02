@@ -30,6 +30,8 @@
         </activity>
         <activity android:name=".Activities.ColorsTheoryActivity">
         </activity>
+        <activity android:name=".Activities.MusicTheoryActivity">
+        </activity>
     </application>
 
 </manifest>

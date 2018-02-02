@@ -30,6 +30,9 @@ public class TopicsActivity extends AppCompatActivity {
                 if (pos == 1) {
                     topic = DoorsActivity.NUMBERS_TOPIC;
                 }
+                if (pos == 2) {
+                    topic = DoorsActivity.MUSIC_TOPIC;
+                }
                 if (pos == 3) {
                     topic = DoorsActivity.COLORS_TOPIC;
                 }

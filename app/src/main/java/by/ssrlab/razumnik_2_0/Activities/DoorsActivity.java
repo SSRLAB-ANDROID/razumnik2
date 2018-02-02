@@ -22,6 +22,7 @@ public class DoorsActivity extends AppCompatActivity {
     public static final int LETTERS_TOPIC = 0;
     public static final int NUMBERS_TOPIC = 1;
     public static final int COLORS_TOPIC = 2;
+    public static final int MUSIC_TOPIC = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,10 @@ public class DoorsActivity extends AppCompatActivity {
         }
         if(topic == COLORS_TOPIC){
             theoryClass = ColorsTheoryActivity.class;
+            gameClass = null;
+        }
+        if(topic == MUSIC_TOPIC){
+            theoryClass = MusicTheoryActivity.class;
             gameClass = null;
         }
 
