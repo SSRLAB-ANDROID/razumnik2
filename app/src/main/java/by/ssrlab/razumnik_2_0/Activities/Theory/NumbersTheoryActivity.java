@@ -1,4 +1,4 @@
-package by.ssrlab.razumnik_2_0.Activities;
+package by.ssrlab.razumnik_2_0.Activities.Theory;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
