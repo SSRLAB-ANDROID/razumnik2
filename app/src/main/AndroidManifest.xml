@@ -20,17 +20,21 @@
         </activity>
         <activity android:name=".Activities.MainActivity">
         </activity>
-        <activity android:name=".Activities.LettersTheoryActivity">
+        <activity android:name=".Activities.Theory.LettersTheoryActivity">
         </activity>
         <activity android:name=".Activities.DoorsActivity">
         </activity>
         <activity android:name=".Activities.TopicsActivity">
         </activity>
-        <activity android:name=".Activities.NumbersTheoryActivity">
+        <activity android:name=".Activities.Theory.NumbersTheoryActivity">
         </activity>
-        <activity android:name=".Activities.ColorsTheoryActivity">
+        <activity android:name=".Activities.Theory.ColorsTheoryActivity">
         </activity>
-        <activity android:name=".Activities.MusicTheoryActivity">
+        <activity android:name=".Activities.Theory.MusicTheoryActivity">
+        </activity>
+        <activity android:name=".Activities.Game.LettersMainGameActivity">
+        </activity>
+        <activity android:name=".Activities.Game.LettersGameDrawActivity">
         </activity>
     </application>
 

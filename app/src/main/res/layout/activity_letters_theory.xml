@@ -6,7 +6,7 @@
     android:id="@+id/letters_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="by.ssrlab.razumnik_2_0.Activities.LettersTheoryActivity">
+    tools:context="by.ssrlab.razumnik_2_0.Activities.Theory.LettersTheoryActivity">
 
     <ImageView
         android:id="@+id/body_frame"
@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/body_frame"
-        android:padding="20dp"/>
+        android:padding="20dp"
+        android:scrollbars="vertical"/>
 
 </RelativeLayout>
