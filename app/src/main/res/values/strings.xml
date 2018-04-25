@@ -19,4 +19,7 @@
     <string name="colors_text">#000000,#ffffff,#2F4F4F,#2F4F4F,#ffffff,#2F4F4F,#ffffff,#ffffff,#ffffff</string>
     <string name="colors_audio">bely,cyrvony,aranzavy,zhouty,zialiony,blakitny,sini,fijaletavy,czorny</string>
 
+    <string name="letters_draw_title">А,Б,Р</string>
+    <string name="letters_draw">a,b,r</string>
+
 </resources>

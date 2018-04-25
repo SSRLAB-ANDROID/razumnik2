@@ -6,6 +6,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import by.ssrlab.razumnik_2_0.Activities.Game.LettersMainGameActivity;
+import by.ssrlab.razumnik_2_0.Activities.Theory.ColorsTheoryActivity;
+import by.ssrlab.razumnik_2_0.Activities.Theory.LettersTheoryActivity;
+import by.ssrlab.razumnik_2_0.Activities.Theory.MusicTheoryActivity;
+import by.ssrlab.razumnik_2_0.Activities.Theory.NumbersTheoryActivity;
 import by.ssrlab.razumnik_2_0.Adapters.ScreenSlidePagerAdapter;
 import by.ssrlab.razumnik_2_0.Fragments.ScreenSliderFragment;
 import by.ssrlab.razumnik_2_0.R;
@@ -51,30 +56,32 @@ public class DoorsActivity extends AppCompatActivity {
         return fragments;
     }
 
-    private void setDoorsRoom(){
+    private void setDoorsRoom() {
         Class theoryClass = null;
-        Class gameClass= null;
-        if(topic == LETTERS_TOPIC){
+        Class gameClass = null;
+        if (topic == LETTERS_TOPIC) {
             theoryClass = LettersTheoryActivity.class;
-            gameClass = null;
+            gameClass = LettersMainGameActivity.class;
         }
-        if(topic == NUMBERS_TOPIC){
+        if (topic == NUMBERS_TOPIC) {
             theoryClass = NumbersTheoryActivity.class;
             gameClass = null;
         }
-        if(topic == COLORS_TOPIC){
+        if (topic == COLORS_TOPIC) {
             theoryClass = ColorsTheoryActivity.class;
             gameClass = null;
         }
-        if(topic == MUSIC_TOPIC){
+        if (topic == MUSIC_TOPIC) {
             theoryClass = MusicTheoryActivity.class;
             gameClass = null;
         }
-
-
+        boolean availability = false;
+        if (gameClass != null) {
+            availability = true;
+        }
         doorMains = new DoorMain[]{
                 new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "Вучы"),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, false, gameClass, "Іграй")
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, availability, gameClass, "Іграй")
         };
     }
 
