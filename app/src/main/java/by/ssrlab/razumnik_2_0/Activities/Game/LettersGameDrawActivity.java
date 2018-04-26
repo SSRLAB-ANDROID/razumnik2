@@ -51,8 +51,9 @@ public class LettersGameDrawActivity extends AppCompatActivity {
 
         LinearLayout letters_linLay = (LinearLayout) findViewById(R.id.letters_list);
 
-        final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(250, 250);
-        lparams.setMargins(20,20,20,20);
+        final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lparams.setMargins(30,30,30,30);
+
 
         for (int i = 0; i < letters.length; i++) {
             TextView tv = new TextView(getApplicationContext());
@@ -80,8 +81,8 @@ public class LettersGameDrawActivity extends AppCompatActivity {
     }
 
     public void createCanvas() {
-        final int height = 500;
-        final int width = 500;
+        final int height = 600;
+        final int width = 600;
 
         Bitmap superBitmap = BitmapFactory.decodeResource(getResources(), drawableInt);
 
