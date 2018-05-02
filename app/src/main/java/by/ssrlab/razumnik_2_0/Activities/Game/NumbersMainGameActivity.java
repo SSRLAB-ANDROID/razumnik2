@@ -8,14 +8,14 @@ import android.widget.ImageView;
 
 import by.ssrlab.razumnik_2_0.R;
 
-public class LettersMainGameActivity extends AppCompatActivity {
+public class NumbersMainGameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_letters_main_game);
-        ImageView draw_letters_iv = (ImageView) findViewById(R.id.draw_letters_iv);
-        GameDrawActivity.mode = GameDrawActivity.LETTERS_MODE;
+        setContentView(R.layout.activity_numbers_main_game);
+        ImageView draw_letters_iv = (ImageView) findViewById(R.id.draw_numbers_iv);
+        GameDrawActivity.mode = GameDrawActivity.NUMBERS_MODE;
         draw_letters_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

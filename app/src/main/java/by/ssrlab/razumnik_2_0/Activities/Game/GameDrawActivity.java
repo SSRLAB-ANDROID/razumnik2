@@ -1,14 +1,10 @@
 package by.ssrlab.razumnik_2_0.Activities.Game;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,25 +13,46 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Locale;
-
 import by.ssrlab.razumnik_2_0.R;
 import by.ssrlab.razumnik_2_0.Tools.DrawingView;
 import by.ssrlab.razumnik_2_0.Tools.ValueParser;
 
-public class LettersGameDrawActivity extends AppCompatActivity {
+public class GameDrawActivity extends AppCompatActivity {
 
     DrawingView dv;
     int drawableInt;
 
+    public static int LETTERS_MODE = 1;
+    public static int NUMBERS_MODE = 2;
+    public static int mode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_letters_game_draw);
+        setContentView(R.layout.activity_game_draw);
 
-        drawableInt = R.drawable.a;
+        if (mode != 1 && mode != 2) {
+            mode = 0;
+        }
+        int r_1;
+        int r_2;
+        switch (mode) {
+            case 1:
+                r_1 = R.string.letters_draw_title;
+                r_2 = R.string.letters_draw;
+                drawableInt = R.drawable.a;
+                break;
+            case 2:
+                r_1 = R.string.numbers_draw_title;
+                r_2 = R.string.numbers_draw;
+                drawableInt = R.drawable.one;
+                break;
+            default:
+                r_1 = R.string.letters_draw_title;
+                r_2 = R.string.letters_draw;
+                drawableInt = R.drawable.a;
+        }
+
         createCanvas();
 
         Button againButton = (Button) findViewById(R.id.button_again);
@@ -46,18 +63,21 @@ public class LettersGameDrawActivity extends AppCompatActivity {
             }
         });
 
-        String letters_titles[] = ValueParser.parseValue(getApplicationContext(), R.string.letters_draw_title);
-        final String letters[] = ValueParser.parseValue(getApplicationContext(), R.string.letters_draw);
 
-        LinearLayout letters_linLay = (LinearLayout) findViewById(R.id.letters_list);
+
+
+        String objects_titles[] = ValueParser.parseValue(getApplicationContext(), r_1);
+        final String objects[] = ValueParser.parseValue(getApplicationContext(), r_2);
+
+        LinearLayout letters_linLay = (LinearLayout) findViewById(R.id.list);
 
         final LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lparams.setMargins(30,30,30,30);
+        lparams.setMargins(30, 30, 30, 30);
 
 
-        for (int i = 0; i < letters.length; i++) {
+        for (int i = 0; i < objects.length; i++) {
             TextView tv = new TextView(getApplicationContext());
-            tv.setText(letters_titles[i]);
+            tv.setText(objects_titles[i]);
             tv.setLayoutParams(lparams);
             tv.setTextColor(Color.WHITE);
             tv.setTextSize(28);
@@ -67,7 +87,7 @@ public class LettersGameDrawActivity extends AppCompatActivity {
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    setDrawableInt(letters[j]);
+                    setDrawableInt(objects[j]);
                     createCanvas();
                 }
             });

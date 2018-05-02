@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import by.ssrlab.razumnik_2_0.Activities.Game.LettersMainGameActivity;
+import by.ssrlab.razumnik_2_0.Activities.Game.NumbersMainGameActivity;
 import by.ssrlab.razumnik_2_0.Activities.Theory.ColorsTheoryActivity;
 import by.ssrlab.razumnik_2_0.Activities.Theory.LettersTheoryActivity;
 import by.ssrlab.razumnik_2_0.Activities.Theory.MusicTheoryActivity;
@@ -65,7 +66,7 @@ public class DoorsActivity extends AppCompatActivity {
         }
         if (topic == NUMBERS_TOPIC) {
             theoryClass = NumbersTheoryActivity.class;
-            gameClass = null;
+            gameClass = NumbersMainGameActivity.class;
         }
         if (topic == COLORS_TOPIC) {
             theoryClass = ColorsTheoryActivity.class;
