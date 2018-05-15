@@ -7,6 +7,8 @@
     <string name="letters">А,Б,В,Г,Д,Е,Ё,Ж,З,І,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ў,Ф,Х,Ц,Ч,Ш,Ы,Ь,Э,Ю,Я</string>
     <string name="letters_audio">a,b,w,g,d,je,yo,zh,z,i,i_karotkae,k,l,m,n,o,p,r,s,t,u,u_neskladovaje,f,x,ts,cz,sh,y,miakki_znak,e,ju,ja</string>
 
+    <string name="letters_find">А,З,І,К,Н,Р,С,Т,У,Ў,Я</string>
+
     <string name="numbers">1,2,3,4,5,6,7,8,9,0</string>
     <string name="numbers_audio">sound_1,sound_2,sound_3,sound_4,sound_5,sound_6,sound_7,sound_8,sound_9,sound_0,</string>
 

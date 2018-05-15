@@ -40,5 +40,13 @@
         android:layout_marginTop="55dp"
         app:srcCompat="@drawable/draw_letters"/>
 
+    <ImageView
+        android:id="@+id/find_letters_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/table"/>
 
 </RelativeLayout>

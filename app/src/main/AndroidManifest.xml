@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".Activities.Game.NumbersMainGameActivity">
         </activity>
+        <activity android:name=".Activities.Game.GameFindActivity">
+        </activity>
     </application>
 
 </manifest>

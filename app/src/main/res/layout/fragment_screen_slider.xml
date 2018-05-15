@@ -5,7 +5,6 @@
              android:layout_height="match_parent"
              tools:context="by.ssrlab.razumnik_2_0.Fragments.ScreenSliderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <ImageView
         android:id="@+id/house_imageView"
