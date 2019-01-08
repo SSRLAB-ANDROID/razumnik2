@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:name=".Activities.LogoActivity"
             android:noHistory="true">
             <intent-filter>
@@ -18,27 +20,49 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name=".Activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.LettersTheoryActivity">
+        <activity android:name=".Activities.Theory.LettersTheoryActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.DoorsActivity">
+        <activity android:name=".Activities.DoorsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.TopicsActivity">
+        <activity android:name=".Activities.TopicsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.NumbersTheoryActivity">
+        <activity android:name=".Activities.Theory.NumbersTheoryActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.ColorsTheoryActivity">
+        <activity android:name=".Activities.Theory.ColorsTheoryActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.MusicTheoryActivity">
+        <activity android:name=".Activities.Theory.MusicTheoryActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.LettersMainGameActivity">
+        <activity android:name=".Activities.Game.LettersMainGameActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.GameDrawActivity">
+        <activity android:name=".Activities.Game.GameDrawActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.NumbersMainGameActivity">
+        <activity android:name=".Activities.Game.NumbersMainGameActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.GameFindActivity">
+        <activity android:name=".Activities.Game.GameFindActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
