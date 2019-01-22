@@ -32,6 +32,7 @@ public class DoorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int a = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doors);
         topic = getSharedPreferences("sp", MODE_PRIVATE).getInt("topic", 0);
