@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import by.ssrlab.razumnik_2_0.R;
+import by.ssrlab.razumnik_2_0.Tools.MyMediaPlayer;
 import by.ssrlab.razumnik_2_0.Tools.ValueParser;
 
 public class GameFindActivity extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class GameFindActivity extends AppCompatActivity {
     char symb = '-';
     TextView textView;
     LinearLayout letters_linLay;
+    MyMediaPlayer myMediaPlayer;
 
     int counter = 0;
 
@@ -34,7 +36,7 @@ public class GameFindActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_find);
         textView = (TextView) findViewById(R.id.tv);
-
+        myMediaPlayer = new MyMediaPlayer(getApplicationContext());
         reset();
 
         Button btn = (Button) findViewById(R.id.button_again);
@@ -137,8 +139,10 @@ public class GameFindActivity extends AppCompatActivity {
             }
         }
         if (letters.size() != 0 && counter == letters.size()) {
+           // myMediaPlayer = new MyMediaPlayer(getApplicationContext());
+           // myMediaPlayer.play("numbers/sound_1.mp3");*/
             Toast.makeText(getApplicationContext(), "Добра!", Toast.LENGTH_SHORT).show();
-        }
+       }
         return str;
     }
 

@@ -10,6 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class DrawingView extends View {
 
     public int width;
@@ -27,7 +30,7 @@ public class DrawingView extends View {
     private DrawingView dv;
 
     private Bitmap superBitmap;
-
+    MyMediaPlayer myMediaPlayer;
 
     public DrawingView(Context c, Bitmap superBitmap) {
         super(c);
@@ -54,7 +57,7 @@ public class DrawingView extends View {
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(strokeWidth);
-
+        myMediaPlayer = new MyMediaPlayer(this.context);
         dv = this;
     }
 
@@ -77,9 +80,16 @@ public class DrawingView extends View {
 
             }
         }
-
+        Random rnd = new Random(System.currentTimeMillis());
         if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 5) {
-            Toast.makeText(context, "Добра!", Toast.LENGTH_SHORT).show();
+            myMediaPlayer = new MyMediaPlayer(this.context);
+            myMediaPlayer.play("voice/dobra_"+ rnd.nextInt(5 - 0 + 1)+".mp3");
+            //Toast.makeText(context, "Добра!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            myMediaPlayer = new MyMediaPlayer(this.context);
+            myMediaPlayer.play("voice/ne_dobra_"+ rnd.nextInt(5 - 0 + 1)+".mp3");
+           // Toast.makeText(context, "Кепска!", Toast.LENGTH_SHORT).show();
         }
     }
 
