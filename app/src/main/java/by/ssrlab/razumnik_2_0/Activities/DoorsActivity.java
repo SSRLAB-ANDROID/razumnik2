@@ -63,14 +63,14 @@ public class DoorsActivity extends AppCompatActivity {
         Class gameClass = null;
         if (topic == LETTERS_TOPIC) {
             theoryClass = LettersTheoryActivity.class;
-            gameClass = LettersMainGameActivity.class;
+            gameClass = null;//заблокировано для польсокого языка LettersMainGameActivity.class;
         }
         if (topic == NUMBERS_TOPIC) {
             theoryClass = NumbersTheoryActivity.class;
-            gameClass = NumbersMainGameActivity.class;
+            gameClass = null;//NumbersMainGameActivity.class;
         }
         if (topic == COLORS_TOPIC) {
-            theoryClass = ColorsTheoryActivity.class;
+            theoryClass = null;//ColorsTheoryActivity.class;
             gameClass = null;
         }
         if (topic == MUSIC_TOPIC) {
@@ -82,8 +82,8 @@ public class DoorsActivity extends AppCompatActivity {
             availability = true;
         }
         doorMains = new DoorMain[]{
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "Вучы"),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, availability, gameClass, "Іграй")
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "Ucz"),
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, availability, gameClass, "Grać")
         };
     }
 

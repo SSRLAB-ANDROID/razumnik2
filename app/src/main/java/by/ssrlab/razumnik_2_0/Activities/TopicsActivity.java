@@ -18,7 +18,7 @@ public class TopicsActivity extends AppCompatActivity {
 
 
         RecyclerView topics_list = (RecyclerView) findViewById(R.id.items_list);
-        Integer data[] = new Integer[]{R.drawable.topic_1, R.drawable.topic_2, R.drawable.topic_3, R.drawable.topic_4};
+        Integer data[] = new Integer[]{R.drawable.topic_1, R.drawable.topic_2, R.drawable.topic_3,/* R.drawable.topic_4*/};
         MyRecycleViewAdapter adapter = new MyRecycleViewAdapter<>(data, R.layout.frame_item);
         adapter.setListener(new MyRecycleViewAdapter.OnItemClickListener() {
             @Override
@@ -33,9 +33,9 @@ public class TopicsActivity extends AppCompatActivity {
                 if (pos == 2) {
                     topic = DoorsActivity.MUSIC_TOPIC;
                 }
-                if (pos == 3) {
+               /* if (pos == 3) {
                     topic = DoorsActivity.COLORS_TOPIC;
-                }
+                }*/
                 if (topic != -1) {
                     getSharedPreferences("sp", MODE_PRIVATE).edit().putInt("topic", topic).apply();
                     startActivity(new Intent(getApplicationContext(), DoorsActivity.class));
