@@ -63,14 +63,14 @@ public class DoorsActivity extends AppCompatActivity {
         Class gameClass = null;
         if (topic == LETTERS_TOPIC) {
             theoryClass = LettersTheoryActivity.class;
-            gameClass = null;//заблокировано для польсокого языка LettersMainGameActivity.class;
+            gameClass = null;//заблокировано для польского языка LettersMainGameActivity.class;
         }
         if (topic == NUMBERS_TOPIC) {
             theoryClass = NumbersTheoryActivity.class;
-            gameClass = null;//NumbersMainGameActivity.class;
+            gameClass = NumbersMainGameActivity.class;
         }
         if (topic == COLORS_TOPIC) {
-            theoryClass = null;//ColorsTheoryActivity.class;
+            theoryClass = ColorsTheoryActivity.class;
             gameClass = null;
         }
         if (topic == MUSIC_TOPIC) {
