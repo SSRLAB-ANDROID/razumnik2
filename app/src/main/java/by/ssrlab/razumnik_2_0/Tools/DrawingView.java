@@ -83,12 +83,12 @@ public class DrawingView extends View {
         Random rnd = new Random(System.currentTimeMillis());
         if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 5) {
             myMediaPlayer = new MyMediaPlayer(this.context);
-            myMediaPlayer.play("voice/dobra_"+ rnd.nextInt(5 - 0 + 1)+".mp3");
+            myMediaPlayer.play("voice/dobra_"+ rnd.nextInt(3 - 0 + 1)+".mp3");
             //Toast.makeText(context, "Добра!", Toast.LENGTH_SHORT).show();
         }
         else {
             myMediaPlayer = new MyMediaPlayer(this.context);
-            myMediaPlayer.play("voice/ne_dobra_"+ rnd.nextInt(5 - 0 + 1)+".mp3");
+            myMediaPlayer.play("voice/ne_dobra_"+ rnd.nextInt(4 - 0 + 1)+".mp3");
            // Toast.makeText(context, "Кепска!", Toast.LENGTH_SHORT).show();
         }
     }
