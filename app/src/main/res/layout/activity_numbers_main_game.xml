@@ -37,7 +37,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        app:srcCompat="@drawable/draw_letters"/>
+        app:srcCompat="@drawable/draw_numbers" />
 
 
 </RelativeLayout>

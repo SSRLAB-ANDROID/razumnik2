@@ -63,7 +63,7 @@ public class DoorsActivity extends AppCompatActivity {
         Class gameClass = null;
         if (topic == LETTERS_TOPIC) {
             theoryClass = LettersTheoryActivity.class;
-            gameClass = null;//заблокировано для польского языка LettersMainGameActivity.class;
+            gameClass = LettersMainGameActivity.class;
         }
         if (topic == NUMBERS_TOPIC) {
             theoryClass = NumbersTheoryActivity.class;

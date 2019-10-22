@@ -15,14 +15,13 @@
     <string name="music">До,Рэ,Мі,Фа,Соль,Ля,Сі,До</string>
     <string name="music_audio">sound_1,sound_2,sound_3,sound_4,sound_5,sound_6,sound_7,sound_8,sound_1b,sound_2b,sound_2b,sound_4b,sound_5b,sound_6b</string>
 
-
     <string name="colors">Biały, Czerwony, Pomarańczowy, Żółty, Zielony, Błękitny, Niebieski, Fioletowy, Czarny</string>
     <string name="colors_back">#ffffff,#FF0000,#FFA500,#FFFF00,#00FF00,#87CEEB,#0000FF,#9400D3,#000000</string>
     <string name="colors_text">#000000,#ffffff,#2F4F4F,#2F4F4F,#ffffff,#2F4F4F,#ffffff,#ffffff,#ffffff</string>
     <string name="colors_audio">bely,cyrvony,aranzavy,zhouty,zialiony,blakitny,sini,fijaletavy,czorny</string>
 
     <string name="letters_draw_title">А,Ą,B,C,Ć,D,E,Ę,F,G,H,I,J,K,L,Ł,M,N,Ń,O,Ó,P,Q,R,S,Ś,T,U,V,W,X,Y,Z,Ź,Ż</string>
-    <string name="letters_draw">a,b,v,g,d,e,yo,je,z,i,ji,k,l,m,n,o,p,r,s,t,u,f,h,c,che,sh,ie,iu,ia</string>
+    <string name="letters_draw">a,a_h,b,c,c_ch,d,e,e_hv,f,g,h,i,j,k,l,l_ch,m,n,n_ch,o,o_hv,p,q,r,s,s_hv,t,u,v,w,x,y,z,z_ch,z_tch</string>
 
     <string name="numbers_draw_title">1,2,3,4,5,6,7,8,9,0</string>
     <string name="numbers_draw">one,two,three,four,five,six,seven,eight,nine,zero</string>
