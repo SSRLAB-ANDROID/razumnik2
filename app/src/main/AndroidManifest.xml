@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="by.ssrlab.razumnik_2_0">
+          package="uk.technologylab.razumnik">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         <activity
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:name=".Activities.LogoActivity"
+            android:name="uk.technologylab.razumnik.Activities.LogoActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,47 +20,47 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.LettersTheoryActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Theory.LettersTheoryActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.DoorsActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.DoorsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.TopicsActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.TopicsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.NumbersTheoryActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Theory.NumbersTheoryActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.ColorsTheoryActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Theory.ColorsTheoryActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Theory.MusicTheoryActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Theory.MusicTheoryActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.LettersMainGameActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Game.LettersMainGameActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.GameDrawActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Game.GameDrawActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.NumbersMainGameActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Game.NumbersMainGameActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activities.Game.GameFindActivity"
+        <activity android:name="uk.technologylab.razumnik.Activities.Game.GameFindActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
