@@ -4,8 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="letters">А,Ą,B,C,Ć,D,E,Ę,F,G,H,I,J,K,L,Ł,M,N,Ń,O,Ó,P,Q,R,S,Ś,T,U,V,W,X,Y,Z,Ź,Ż</string>
-    <string name="letters_audio">a,oy,b,c,che,de,eh,eu,f,ge,h,i,j,k,l,ell,m,n,en,o,u,p,qu,r,s,esh,t,u,fau(v),vu(w),x,y,z,jet,jeet</string>
+    <string name="letters">А,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z</string>
+    <string name="letters_audio">a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z</string>
 
     <string name="letters_find">А,З,І,К,Н,Р,С,Т,У,Ў,Я</string>
 
@@ -20,8 +20,8 @@
     <string name="colors_text">#000000,#ffffff,#2F4F4F,#2F4F4F,#ffffff,#2F4F4F,#ffffff,#ffffff,#ffffff</string>
     <string name="colors_audio">white,red,orange,yellow,green,blue,night_blue,purple,black</string>
 
-    <string name="letters_draw_title">А,Ą,B,C,Ć,D,E,Ę,F,G,H,I,J,K,L,Ł,M,N,Ń,O,Ó,P,Q,R,S,Ś,T,U,V,W,X,Y,Z,Ź,Ż</string>
-    <string name="letters_draw">a,a_h,b,c,c_ch,d,e,e_hv,f,g,h,i,j,k,l,l_ch,m,n,n_ch,o,o_hv,p,q,r,s,s_hv,t,u,v,w,x,y,z,z_ch,z_tch</string>
+    <string name="letters_draw_title">А,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z</string>
+    <string name="letters_draw">a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z</string>
 
     <string name="numbers_draw_title">1,2,3,4,5,6,7,8,9,0</string>
     <string name="numbers_draw">one,two,three,four,five,six,seven,eight,nine,zero</string>

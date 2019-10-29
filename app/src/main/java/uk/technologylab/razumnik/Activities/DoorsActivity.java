@@ -82,8 +82,8 @@ public class DoorsActivity extends AppCompatActivity {
             availability = true;
         }
         doorMains = new DoorMain[]{
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "Ucz się"),
-                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, availability, gameClass, "Graj")
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, true, theoryClass, "To study"),
+                new DoorMain(getApplicationContext(), DoorMain.TYPE_DOOR, DoorMain.TYPE_ONE, availability, gameClass, "Play")
         };
     }
 
