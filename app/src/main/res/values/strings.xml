@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Razumnik (PL)</string>
 
+
     <string name="letters">А,Ą,B,C,Ć,D,E,Ę,F,G,H,I,J,K,L,Ł,M,N,Ń,O,Ó,P,Q,R,S,Ś,T,U,V,W,X,Y,Z,Ź,Ż</string>
     <string name="letters_audio">a,oy,b,c,che,de,eh,eu,f,ge,h,i,j,k,l,ell,m,n,en,o,u,p,qu,r,s,esh,t,u,fau(v),vu(w),x,y,z,jet,jeet</string>
 
