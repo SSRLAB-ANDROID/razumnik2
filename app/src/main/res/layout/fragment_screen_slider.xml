@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="by.ssrlab.razumnik_2_0.Fragments.ScreenSliderFragment">
+             tools:context="by.ssrlab.razumnik.Fragments.ScreenSliderFragment">
 
 
     <ImageView

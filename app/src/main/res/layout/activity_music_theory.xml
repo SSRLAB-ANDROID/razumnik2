@@ -5,7 +5,7 @@
     android:id="@+id/music_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="by.ssrlab.razumnik_2_0.Activities.Theory.LettersTheoryActivity">
+    tools:context="by.ssrlab.razumnik.Activities.Theory.LettersTheoryActivity">
 
     <ImageView
         android:id="@+id/body_frame"
