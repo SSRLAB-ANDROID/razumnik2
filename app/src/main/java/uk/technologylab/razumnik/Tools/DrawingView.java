@@ -79,14 +79,17 @@ public class DrawingView extends View {
             }
         }
         Random rnd = new Random(System.currentTimeMillis());
-        if ((count * 100 / need_pixels) > 30 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 50) {
+        int r_dobr = 0 + (int) (Math.random() * 3);
+        int r_ne_dobr = 0 + (int) (Math.random() * 4);
+
+        if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 12) {
             myMediaPlayer = new MyMediaPlayer(this.context);
-            myMediaPlayer.play("voice/dobra_"+ rnd.nextInt(3 - 0 + 1)+".mp3");
+            myMediaPlayer.play("voice/dobra_"+ r_dobr+".mp3");
             //Toast.makeText(context, "Добра!", Toast.LENGTH_SHORT).show();
         }
         else {
             myMediaPlayer = new MyMediaPlayer(this.context);
-            myMediaPlayer.play("voice/ne_dobra_"+ rnd.nextInt(4 - 0 + 1)+".mp3");
+            myMediaPlayer.play("voice/ne_dobra_"+ r_ne_dobr+".mp3");
            // Toast.makeText(context, "Кепска!", Toast.LENGTH_SHORT).show();
         }
     }
