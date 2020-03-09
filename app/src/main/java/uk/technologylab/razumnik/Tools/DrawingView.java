@@ -8,8 +8,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Random;
+
+import uk.technologylab.razumnik.R;
 
 public class DrawingView extends View {
 
@@ -45,8 +49,15 @@ public class DrawingView extends View {
 
         this.superBitmap = superBitmap;
         need_pixels = getAll();
-
         int strokeWidth = 75;
+        float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
+        if(dpiDensity>=3.0){
+            strokeWidth = 75;
+        }
+        else{
+            strokeWidth = 45;
+        }
+
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
@@ -81,16 +92,27 @@ public class DrawingView extends View {
         Random rnd = new Random(System.currentTimeMillis());
         int r_dobr = 0 + (int) (Math.random() * 3);
         int r_ne_dobr = 0 + (int) (Math.random() * 4);
+        Toast toast = new Toast(context);
+        ImageView view = new ImageView(context);
+        view.setMaxHeight(300);
+        view.setMaxWidth(300);
 
-        if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 12) {
+
+        if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 5) {
             myMediaPlayer = new MyMediaPlayer(this.context);
             myMediaPlayer.play("voice/dobra_"+ r_dobr+".mp3");
             //Toast.makeText(context, "Добра!", Toast.LENGTH_SHORT).show();
+            view.setImageResource(R.drawable.right);
+            toast.setView(view);
+          // toast.show();
         }
         else {
             myMediaPlayer = new MyMediaPlayer(this.context);
             myMediaPlayer.play("voice/ne_dobra_"+ r_ne_dobr+".mp3");
            // Toast.makeText(context, "Кепска!", Toast.LENGTH_SHORT).show();
+            view.setImageResource(R.drawable.wrong);
+            toast.setView(view);
+           //toast.show();
         }
     }
 

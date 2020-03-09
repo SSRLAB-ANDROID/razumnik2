@@ -1,10 +1,14 @@
 package uk.technologylab.razumnik.Activities.Game;
 
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,15 +103,28 @@ public class GameDrawActivity extends AppCompatActivity {
     public void setDrawableInt(String name) {
         drawableInt = getResources().getIdentifier(name, "drawable", getApplicationContext().getPackageName());
     }
-
+     int height = 600;
+     int width = 600;
     public void createCanvas() {
-        final int height = 600;
-        final int width = 600;
+        float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
+            if(dpiDensity>=3.0){
+                height = 600;
+                width = 600;
+            }
+                else{
+                height = 400;
+                width = 400;
+            }
+
+
+
+
+
 
         Bitmap superBitmap = BitmapFactory.decodeResource(getResources(), drawableInt);
 
         superBitmap = Bitmap.createScaledBitmap(
-                superBitmap, width, height, false);
+                superBitmap, width, height, true);
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.wall_layout);
         if (dv != null) {
             layout.removeView(dv);
@@ -121,6 +138,7 @@ public class GameDrawActivity extends AppCompatActivity {
         RelativeLayout.LayoutParams layPar = new RelativeLayout.LayoutParams(height, width);
         layPar.addRule(RelativeLayout.CENTER_IN_PARENT);
         dv.setLayoutParams(layPar);
+
         layout.addView(dv);
     }
 
