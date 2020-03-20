@@ -103,15 +103,16 @@ public class GameDrawActivity extends AppCompatActivity {
     public void setDrawableInt(String name) {
         drawableInt = getResources().getIdentifier(name, "drawable", getApplicationContext().getPackageName());
     }
-     int height = 600;
-     int width = 600;
+
     public void createCanvas() {
+        int height = 600;
+        int width = 600;
         float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
-            if(dpiDensity>=3.0){
+
+            if (dpiDensity >= 3.0) {
                 height = 600;
                 width = 600;
-            }
-                else{
+            } else {
                 height = 400;
                 width = 400;
             }
@@ -138,8 +139,9 @@ public class GameDrawActivity extends AppCompatActivity {
         RelativeLayout.LayoutParams layPar = new RelativeLayout.LayoutParams(height, width);
         layPar.addRule(RelativeLayout.CENTER_IN_PARENT);
         dv.setLayoutParams(layPar);
-
+        dv.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         layout.addView(dv);
     }
+
 
 }

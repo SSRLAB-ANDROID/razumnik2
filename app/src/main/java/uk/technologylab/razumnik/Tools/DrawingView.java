@@ -49,7 +49,7 @@ public class DrawingView extends View {
 
         this.superBitmap = superBitmap;
         need_pixels = getAll();
-        int strokeWidth = 75;
+        int strokeWidth;
         float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
         if(dpiDensity>=3.0){
             strokeWidth = 75;
@@ -94,8 +94,6 @@ public class DrawingView extends View {
         int r_ne_dobr = 0 + (int) (Math.random() * 4);
         Toast toast = new Toast(context);
         ImageView view = new ImageView(context);
-        view.setMaxHeight(300);
-        view.setMaxWidth(300);
 
 
         if ((count * 100 / need_pixels) > 70 && (count_error * 100) / (((width/2) * (height/2)) - need_pixels) < 5) {
