@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-razumnik2.iml" filepath="$PROJECT_DIR$/StudioProjects-razumnik2.iml" group="razumnik2" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/razumnik2.iml" filepath="$PROJECT_DIR$/razumnik2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/razumnik2-app.iml" filepath="$PROJECT_DIR$/app/razumnik2-app.iml" group="razumnik2/app" />
+    </modules>
+  </component>
+</project>
