@@ -115,12 +115,13 @@ public class GameDrawActivity extends AppCompatActivity {
                 height = 630;
                 width = 630;
                 StrokeWidth=50;
-            }  if (Density <= 1.5) {
+            }
+           else if (Density <= 1.5) {
             height = 300;
             width = 300;
             StrokeWidth=40;
         }
-            if(Density >= 3.0)
+           else if(Density >= 3.0)
             {
                 height = 810;
                 width = 810;
@@ -145,11 +146,7 @@ public class GameDrawActivity extends AppCompatActivity {
             layout.removeView(dv);
         }
 
-        if (Density >= 1.6) {
 
-        }  if (Density <= 1.5) {
-
-        }
 
         dv = new DrawingView(this, superBitmap, StrokeWidth);
 
