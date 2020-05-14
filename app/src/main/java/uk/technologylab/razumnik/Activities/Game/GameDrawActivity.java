@@ -1,14 +1,11 @@
 package uk.technologylab.razumnik.Activities.Game;
 
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Point;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +26,12 @@ public class GameDrawActivity extends AppCompatActivity {
     public static int LETTERS_MODE = 1;
     public static int NUMBERS_MODE = 2;
     public static int mode;
+    public static RelativeLayout  mainLay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_draw);
-
         if (mode != 1 && mode != 2) {
             mode = 0;
         }
@@ -57,8 +54,8 @@ public class GameDrawActivity extends AppCompatActivity {
                 drawableInt = R.drawable.a;
         }
 
+        mainLay =(RelativeLayout) findViewById(R.id.main_layout);
         createCanvas();
-
         Button againButton = (Button) findViewById(R.id.button_again);
         againButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,14 +102,31 @@ public class GameDrawActivity extends AppCompatActivity {
     }
 
     public void createCanvas() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int Height = displayMetrics.heightPixels;
+        int Width = displayMetrics.widthPixels;
         int height = 600;
         int width = 600;
-        float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
+        float Density = displayMetrics.scaledDensity;
+        int StrokeWidth=45; //brush size
 
-            if (dpiDensity >= 3.0) {
-                height = 600;
-                width = 600;
-            } else {
+            if (Density >= 1.6 && Density <= 3.0) {
+                height = 630;
+                width = 630;
+                StrokeWidth=50;
+            }  if (Density <= 1.5) {
+            height = 300;
+            width = 300;
+            StrokeWidth=40;
+        }
+            if(Density >= 3.0)
+            {
+                height = 810;
+                width = 810;
+                StrokeWidth=95;
+            }
+            else {
                 height = 400;
                 width = 400;
             }
@@ -131,7 +145,13 @@ public class GameDrawActivity extends AppCompatActivity {
             layout.removeView(dv);
         }
 
-        dv = new DrawingView(this, superBitmap);
+        if (Density >= 1.6) {
+
+        }  if (Density <= 1.5) {
+
+        }
+
+        dv = new DrawingView(this, superBitmap, StrokeWidth);
 
         dv.setLayoutParams(new LinearLayout.LayoutParams(width, height));
         dv.setBackgroundDrawable(getResources().getDrawable(drawableInt));

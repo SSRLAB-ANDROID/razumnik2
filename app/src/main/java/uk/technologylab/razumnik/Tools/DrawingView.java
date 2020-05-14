@@ -34,9 +34,10 @@ public class DrawingView extends View {
     private Bitmap superBitmap;
     MyMediaPlayer myMediaPlayer;
 
-    public DrawingView(Context c, Bitmap superBitmap) {
+    public DrawingView(Context c, Bitmap superBitmap,int StrokeWidth) {
         super(c);
         context = c;
+
         mPath = new Path();
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
         circlePaint = new Paint();
@@ -49,14 +50,15 @@ public class DrawingView extends View {
 
         this.superBitmap = superBitmap;
         need_pixels = getAll();
-        int strokeWidth;
+        int strokeWidth=StrokeWidth;
         float dpiDensity = getResources().getDisplayMetrics().scaledDensity;
-        if(dpiDensity>=3.0){
+
+        /*if(dpiDensity>=3.0){
             strokeWidth = 75;
         }
         else{
             strokeWidth = 45;
-        }
+        }*/
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);

@@ -7,7 +7,7 @@ android {
         applicationId 'uk.technologylab.razumnik'
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 4
+        versionCode 6
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -20,8 +20,17 @@ android {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\markk\\Downloads\\techlab.jks')
+            keyAlias = 'techlab'
+            storePassword 'techLAB!@#'
+            keyPassword 'techLAB!@#'
+        }
+    }
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
+        signingConfig signingConfigs.release
     }
 }
 
